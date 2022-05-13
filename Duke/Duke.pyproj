@@ -44,11 +44,14 @@
     <Content Include="requirements.txt" />
     <Content Include="static\content\bootstrap.css" />
     <Content Include="static\content\bootstrap.min.css" />
-    <Content Include="static\content\site.css" />
+    <Content Include="static\content\menu.css" />
+    <Content Include="static\content\styles.css" />
     <Content Include="static\fonts\glyphicons-halflings-regular.eot" />
     <Content Include="static\fonts\glyphicons-halflings-regular.svg" />
     <Content Include="static\fonts\glyphicons-halflings-regular.ttf" />
     <Content Include="static\fonts\glyphicons-halflings-regular.woff" />
+    <Content Include="static\fonts\Montserrat-Regular.woff" />
+    <Content Include="static\fonts\Montserrat-Regular.woff2" />
     <Content Include="static\scripts\bootstrap.js" />
     <Content Include="static\scripts\bootstrap.min.js" />
     <Content Include="static\scripts\jquery-1.10.2.intellisense.js" />
@@ -65,9 +68,11 @@
     <Content Include="static\scripts\respond.min.js" />
     <Content Include="static\scripts\_references.js" />
     <Content Include="views\about.tpl" />
-    <Content Include="views\contact.tpl" />
-    <Content Include="views\index.tpl" />
+    <Content Include="views\firstVar.tpl" />
     <Content Include="views\layout.tpl" />
+    <Content Include="views\main.tpl" />
+    <Content Include="views\secondVar.tpl" />
+    <Content Include="views\thirdVar.tpl" />
   </ItemGroup>
   <ItemGroup>
     <Interpreter Include="env\">

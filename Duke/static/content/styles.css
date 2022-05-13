@@ -1,7 +1,158 @@
-﻿@font-face {
+@font-face {
     font-family: 'Montserrat';
     src: url('../fonts/Montserrat-Regular.woff2') format('woff2'), url('../fonts/Montserrat-Regular.woff') format('woff');
     font-weight: normal;
     font-style: normal;
     font-display: swap;
+}
+
+html, body {
+    margin: 0px;
+    padding: 0px;
+    font-family: "Montserrat";
+    background: #181818;
+}
+
+h1, h2, h3, h4, p {
+    color: whitesmoke;
+}
+
+.rightAlignment {
+    float: right
+}
+
+.wrapper {
+    display: inline-block;
+}
+
+.center {
+    display: flex;
+    justify-content: center;
+}
+
+.cards_container {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-auto-rows: auto;
+    grid-row-gap: 3rem;
+    grid-column-gap: 2rem;
+}
+
+.card {
+    background-color: #333;
+    border-radius: 16px;
+    padding: 2rem 2rem 2rem 2rem;
+}
+
+    .card:hover {
+        transform: scale(1.03);
+    }
+
+.link-text {
+    word-break: break-all;
+}
+
+html, body {
+    height: 500px;
+    font-family: Montserrat;
+    color: white;
+}
+
+.heading {
+    font-size: 35px;
+    letter-spacing: 2px;
+}
+
+.description {
+    font-size: 20px;
+}
+
+.persons_container {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-auto-rows: auto;
+    grid-column-gap: 8rem;
+    padding-top: 2rem;
+}
+
+.person {
+    background-color: #333;
+    border-radius: 16px;
+    padding: 2rem 2rem 2rem 2rem;
+}
+
+.p-secondary {
+    color: #828282;
+    font-size: 15px;
+}
+
+.image {
+    border-radius: 8px;
+    width: 400px;
+    height: 500px;
+}
+
+.normal-letters {
+    letter-spacing: 2px;
+}
+
+.margin-15rem-left {
+    margin-left: 15rem;
+}
+
+.margin-50rem-right {
+    margin-right: 50rem;
+}
+
+.link {
+    color: white;
+    text-decoration: none;
+}
+
+    .link:hover {
+        color: white;
+        font-style: normal;
+        text-decoration: underline;
+    }
+
+.modal-pop-up {
+    visibility: hidden;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 50;
+    width: 500px;
+    max-width: 80%;
+}
+
+.modal-pop-up-content {
+    position: relative;
+}
+
+.disabled-card {
+    pointer-events: none;
+}
+
+button {
+    float: right;
+    background: none;
+    background-color: none;
+    border: 0;
+    letter-spacing: 1px;
+    font-size: medium;
+    font: Montserrat;
+    color: whitesmoke;
+    padding: 8px;
+    text-decoration: None;
+}
+
+    button:hover {
+        background-color: #181818;
+    }
+
+.modal-card {
+    background-color: #333;
+    border-radius: 16px;
+    padding: 2rem 2rem 2rem 2rem;
 }
