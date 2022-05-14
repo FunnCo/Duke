@@ -28,6 +28,7 @@
 			<td>9</td>
 		  </tr>
 		</table>
+		<button class="button button-padding">Посчитать</button>
 	</div>
 
 	<div class="solution_card">

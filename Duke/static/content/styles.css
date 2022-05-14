@@ -6,6 +6,11 @@
     font-display: swap;
 }
 
+.button {
+    border: 1.5px solid #fff;
+    border-radius: 6px;
+}
+
 #table {
     font-family: Arial, Helvetica, sans-serif;
     border-collapse: collapse;
@@ -44,6 +49,10 @@
 
 .padding-top {
     padding-top: 1rem;
+}
+
+.button-padding {
+    margin-top: 2rem;
 }
 
 html, body {
