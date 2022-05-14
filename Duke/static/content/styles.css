@@ -6,6 +6,46 @@
     font-display: swap;
 }
 
+#table {
+    font-family: Arial, Helvetica, sans-serif;
+    border-collapse: collapse;
+    width: 100%;
+    margin-top: 2rem;
+}
+
+    #table td, #table th {
+        text-align: center;
+        color: white;
+        padding: 8px;
+        border: 1px solid #ddd;
+    }
+
+#table1 {
+    font-family: Arial, Helvetica, sans-serif;
+    border-collapse: collapse;
+    width: 100%;
+}
+
+    #table1 td, #table1 th {
+        text-align: center;
+        color: white;
+        padding: 8px;
+        border: 1px solid #ddd;
+    }
+
+.text {
+    background-color: #666;
+    color: white;
+}
+
+.small-padding-top {
+    padding-top: 0.5rem;
+}
+
+.padding-top {
+    padding-top: 1rem;
+}
+
 html, body {
     margin: 0px;
     padding: 0px;
@@ -73,6 +113,33 @@ html, body {
     grid-auto-rows: auto;
     grid-column-gap: 8rem;
     padding-top: 2rem;
+}
+
+.fill_horizontally {
+    width: 100%;
+}
+
+.solution_card {
+    background-color: #333;
+    border-radius: 16px;
+    padding: 2rem 2rem 2rem 2rem;
+}
+
+.cards_container {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-auto-rows: auto;
+    grid-column-gap: 8rem;
+    padding-top: 2rem;
+}
+
+.third_cards_subcontainer {
+    display: grid;
+    grid-template-columns: repeat(1, 1fr);
+    grid-auto-rows: auto;
+    grid-column-gap: 8rem;
+    padding-top: 2rem;
+    width: 50%;
 }
 
 .person {
