@@ -20,9 +20,9 @@
                     <div class="tasks">
                         <a href="#" id="tasksText">ЗАДАЧИ</a>                    
                         <ul class="ul-dropdown">
-                            <li class="li-dropdown"><a class="a-dropdown" href="#">ВАРИАНТ 1</a>
-                            <li class="li-dropdown"><a class="a-dropdown" href="#">ВАРИАНТ 2</a>  
-                            <li class="li-dropdown"><a class="a-dropdown" href="#">ВАРИАНТ 3</a>  
+                            <li class="li-dropdown"><a class="a-dropdown" href="./firstVar">ВАРИАНТ 1</a>
+                            <li class="li-dropdown"><a class="a-dropdown" href="./secondVar">ВАРИАНТ 2</a>  
+                            <li class="li-dropdown"><a class="a-dropdown" href="./thirdVar">ВАРИАНТ 3</a>  
                         </ul>
                     </div>                      
                 </div>
