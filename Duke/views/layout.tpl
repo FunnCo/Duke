@@ -39,26 +39,10 @@
         <hr/>
         <footer>
             <p class="wrapper">&copy; {{ year }} - Duke</p>
-            <p class="rightAlignment" class="wrapper">dukecorp@internet.re</p>
+            <p class="rightAlignment wrapper">dukecorp@internet.re</p>
         </footer>
     </div>
 
-    <div id="modalCard" class="modal-card modal-pop-up">
-        <div>
-           <h2>Переход на другую страницу</h2>
-           <hr>
-           <p class="link-text" id="modalText">Вы уверены, что хотите перейти на страницу: </p>
-           <div class="modal-pop-up-content">
-                <button id="modalYes"> 
-                    Да
-                </button>
-                <button id="modalNo">
-                    Нет
-                </button>
-                </div>
-            </div>
-        </div>
-    </div>
 
     <script src="/static/scripts/jquery-1.10.2.js"></script>
     <script src="/static/scripts/bootstrap.js"></script>

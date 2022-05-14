@@ -11,6 +11,14 @@
     border-radius: 6px;
 }
 
+    .button:hover {
+        background: #252525
+    }
+
+    .button:focus {
+        background: #252525
+    }
+
 #table {
     font-family: Arial, Helvetica, sans-serif;
     border-collapse: collapse;
