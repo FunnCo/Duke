@@ -11,20 +11,22 @@
 </head>
 
 <body>
-    <div class="top_panel_wrapper" id="topPanel">
+        <div class="top_panel_wrapper" id="topPanel">
         <div class="navbar_wrapper">
-            <div class="navbar center">
-                <ul>
-                    <li><a href="./about">О НАС</a></li>
-                    <li><a href="./main">ГЛАВНАЯ</a></li>
-                    <li><select class="link">
-                    <option>ЗАДАЧИ</option>
-                    <option>ВАРИАНТ 1</option>
-                    <option>ВАРИАНТ 2</option>
-                    <option>ВАРИАНТ 3</option>
-                    </select></li>
-                </ul>
-            </div>
+            <nav>
+                <div class="center dropdown">
+                    <a href="./about">О НАС</a>
+                    <a href="./main">ГЛАВНАЯ</a>
+                    <div class="tasks">
+                        <a href="#" id="tasksText">ЗАДАЧИ</a>                    
+                        <ul class="ul-dropdown">
+                            <li class="li-dropdown"><a class="a-dropdown" href="./firstVar">ВАРИАНТ 1</a>
+                            <li class="li-dropdown"><a class="a-dropdown" href="./secondVar">ВАРИАНТ 2</a>  
+                            <li class="li-dropdown"><a class="a-dropdown" href="./thirdVar">ВАРИАНТ 3</a>  
+                        </ul>
+                    </div>                      
+                </div>
+            </nav>
         </div>
 
         <div class="top-panel_overlay">

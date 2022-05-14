@@ -1,22 +1,13 @@
 @font-face {
     font-family: 'Montserrat';
-    src: url('../fonts/Montserrat-Regular.woff2') format('woff2'), url('../fonts/Montserrat-Regular.woff') format('woff');
+    src: url('./Montserrat-Regular.woff2') format('woff2'), url('.Montserrat-Regular.woff') format('woff');
     font-weight: normal;
     font-style: normal;
     font-display: swap;
 }
 
-select, option {
-    color: white;
-    letter-spacing: 5px;
-    font-size: 24px;
-    width: 220px;
-    height: 40px;
-    padding: 0px 6px;
-    margin-top: 11px;
-    background: #323232;
-    border: 0px;
-    font-family: "Montserrat";
+* {
+    box-sizing: border-box;
 }
 
 html, body {
@@ -41,7 +32,6 @@ html, body {
 .top_name {
     display: inline-block;
     margin-left: 16px;
-    float: inline-end;
 }
 
 .top_panel_wrapper {
@@ -68,39 +58,74 @@ h1 {
     color: white
 }
 
-ul {
-    list-style-type: none;
-    margin: 0;
-    padding: 0;
-    overflow: hidden;
-    background-color: #333;
+
+.dropdown a {
+    display: inline-block;
+    color: white;
+    text-align: center;
+    letter-spacing: 5px;
+    font-size: 24px;
+    margin: 16px 16px;
+    padding: 14px 20px;
+    text-decoration: none;
 }
 
-li {
-    padding-left: 0px;
-    padding-right: 12px;
-    padding-top: 16px;
-    padding-bottom: 16px;
-    float: left;
-}
-
-    li a {
-        display: inline-block;
+    .dropdown a:hover {
+        background: #555;
         color: white;
-        text-align: center;
-        letter-spacing: 5px;
-        font-size: 24px;
-        margin-left: 20px;
-        margin-right: 20px;
-        padding: 14px 20px;
-        text-decoration: none;
+        transition: all 0.25s ease;
     }
-
-        li a:hover {
-            text-decoration: underline;
-            color: white
-        }
 
 .letters-spacing {
     letter-spacing: 4px;
+}
+
+
+
+.ul-dropdown {
+    list-style: none;
+    background-color: #333;
+    position: absolute;
+    top: 40px;
+    padding: 0;
+    width: 100%;
+    opacity: 0%;
+    pointer-events: none;
+    transform: translateY(30px);
+    transition: all 0.25s ease;
+}
+
+.li-dropdown .a-dropdown {
+    padding: 4px 0px 4px 0px;
+    margin: 4px 0px 4px 0px;
+    font-size: 20px;
+    width: 100%;
+}
+
+.li-dropdown:hover {
+    background: #555;
+    transition: all 0.25s ease;
+}
+
+.a-dropdown:hover {
+    height: 150%;
+}
+
+.tasks {
+    position: relative;
+}
+
+.dropdown {
+    background: #333;
+    display: flex;
+    width:50%;
+    left:20%;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.ul-dropdown:hover, #tasksText:hover + ul {
+    opacity: 100%;
+    pointer-events: all;
+    transform: translateY(35px);
 }
