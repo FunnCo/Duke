@@ -89,6 +89,7 @@ html, body {
 .image {
     border-radius: 8px;
     width: 400px;
+    object-fit: cover;
     height: 500px;
 }
 
