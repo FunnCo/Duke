@@ -33,6 +33,20 @@
         border: 1px solid #ddd;
     }
 
+.table-input {
+    display: table-cell;
+    background: transparent;
+    border: 0px;
+    text-align:center;
+    color: white;
+    width:80%;
+}
+
+    .table-input:focus {
+        border: 0px;
+        outline: none;
+    }
+
 #table1 {
     font-family: Arial, Helvetica, sans-serif;
     border-collapse: collapse;
@@ -49,6 +63,8 @@
 .text {
     background-color: #666;
     color: white;
+    padding-left: 6px;
+    resize: none;
 }
 
 .small-padding-top {
