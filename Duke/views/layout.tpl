@@ -11,20 +11,22 @@
 </head>
 
 <body>
-    <div class="top_panel_wrapper" id="topPanel">
+        <div class="top_panel_wrapper" id="topPanel">
         <div class="navbar_wrapper">
-            <div class="navbar center">
-                <ul>
-                    <li><a href="./about">О НАС</a></li>
-                    <li><a href="./main">ГЛАВНАЯ</a></li>
-                    <li><select class="link">
-                    <option>ЗАДАЧИ</option>
-                    <option>ВАРИАНТ 1</option>
-                    <option>ВАРИАНТ 2</option>
-                    <option>ВАРИАНТ 3</option>
-                    </select></li>
-                </ul>
-            </div>
+            <nav>
+                <div class="center dropdown">
+                    <a href="./about">О НАС</a>
+                    <a href="./main">ГЛАВНАЯ</a>
+                    <div class="tasks">
+                        <a href="#" id="tasksText">ЗАДАЧИ</a>                    
+                        <ul class="ul-dropdown">
+                            <li class="li-dropdown"><a class="a-dropdown" href="./firstVar">ВАРИАНТ 1</a>
+                            <li class="li-dropdown"><a class="a-dropdown" href="./secondVar">ВАРИАНТ 2</a>  
+                            <li class="li-dropdown"><a class="a-dropdown" href="./thirdVar">ВАРИАНТ 3</a>  
+                        </ul>
+                    </div>                      
+                </div>
+            </nav>
         </div>
 
         <div class="top-panel_overlay">
@@ -37,26 +39,10 @@
         <hr/>
         <footer>
             <p class="wrapper">&copy; {{ year }} - Duke</p>
-            <p class="rightAlignment" class="wrapper">dukecorp@internet.re</p>
+            <p class="rightAlignment wrapper">dukecorp@internet.re</p>
         </footer>
     </div>
 
-    <div id="modalCard" class="modal-card modal-pop-up">
-        <div>
-           <h2>Переход на другую страницу</h2>
-           <hr>
-           <p class="link-text" id="modalText">Вы уверены, что хотите перейти на страницу: </p>
-           <div class="modal-pop-up-content">
-                <button id="modalYes"> 
-                    Да
-                </button>
-                <button id="modalNo">
-                    Нет
-                </button>
-                </div>
-            </div>
-        </div>
-    </div>
 
     <script src="/static/scripts/jquery-1.10.2.js"></script>
     <script src="/static/scripts/bootstrap.js"></script>
