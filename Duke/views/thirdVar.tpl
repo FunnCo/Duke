@@ -13,26 +13,11 @@
 			<div class="small-padding-top" class="fill_horizontally">
 				<input class="fill_horizontally text" type="text" name="n" value=""><br>
 			</div>
-			<table id="table">
-				<tbody>
-				  <tr>
-					<td>
-						<input type="text" class="table-input" placeholder="0">
-					</td>
-					<td><input type="text" class="table-input" placeholder="0"></td>
-					<td><input type="text" class="table-input" placeholder="0"></td>
-				  </tr>
-				  <tr>
-					<td><input type="text" class="table-input" placeholder="0"></td>
-					<td><input type="text" class="table-input" placeholder="0"></td> 
-					<td><input type="text" class="table-input" placeholder="0"></td>
-				  </tr>
-				  <tr>
-					<td><input type="text" class="table-input" placeholder="0"></td>
-					<td><input type="text" class="table-input" placeholder="0"></td> 
-					<td><input type="text" class="table-input" placeholder="0"></td>
-				  </tr>
-			  <tbody>
+			Количество вершин графа<br>
+			<div class="small-padding-top" class="fill_horizontally">
+				<input class="fill_horizontally text input-verticies-count" type="text" name="n" value="3"><br>
+			</div>
+			<table id="table" class="verticies_table">
 			</table>
 			<button class="button button-padding" id="calculate">Посчитать</button>
 		</div>
@@ -46,3 +31,6 @@
 	</div>
 </div>
 
+<script>
+	handleResize();
+</script>
