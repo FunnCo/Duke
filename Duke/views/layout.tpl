@@ -21,11 +21,11 @@
                     <a href="./about">О НАС</a>
                     <a href="./main">ГЛАВНАЯ</a>
                     <div class="tasks">
-                        <a href="#" id="tasksText">ЗАДАЧИ</a>                    
+                        <a href="#" id="tasksText">ЗАДАНИЯ</a>          
                         <ul class="ul-dropdown">
-                            <li class="li-dropdown"><a class="a-dropdown" href="./firstVar">ВАРИАНТ 1</a>
-                            <li class="li-dropdown"><a class="a-dropdown" href="./secondVar">ВАРИАНТ 2</a>  
-                            <li class="li-dropdown"><a class="a-dropdown" href="./thirdVar">ВАРИАНТ 3</a>  
+                            <li class="li-dropdown"><a class="a-dropdown" href="./firstVar">СВОЙСТВА ОТНОШЕНИЙ 1</a>
+                            <li class="li-dropdown"><a class="a-dropdown" href="./secondVar">СВОЙСТВА ОТНОШЕНИЙ 2</a>  
+                            <li class="li-dropdown"><a class="a-dropdown" href="./thirdVar">МАКСИМАЛЬНЫЙ ПОТОК</a>  
                         </ul>
                     </div>                      
                 </div>

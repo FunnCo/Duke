@@ -1,6 +1,6 @@
 % rebase('layout.tpl', year=year)
 
-<h1>Третий вариант</h1>
+<h1>Калькулятор максимального потока</h1>
 <p class="description">Требуется найти максимальный поток в сети от источника s к стоку t. </p>
 <div class="center">
 	<div class="third_cards_subcontainer">

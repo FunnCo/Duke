@@ -80,8 +80,6 @@ h1 {
     letter-spacing: 4px;
 }
 
-
-
 .ul-dropdown {
     list-style: none;
     background-color: #333;
@@ -128,4 +126,9 @@ h1 {
     opacity: 100%;
     pointer-events: all;
     transform: translateY(35px);
+}
+
+#tasksText {
+    margin-left: 5rem;
+    margin-right: 5rem;
 }
