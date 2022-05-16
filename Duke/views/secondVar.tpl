@@ -9,45 +9,17 @@
 	 <div class="solution_card">
 		Количество вершин графа<br>
 		<div class="small-padding-top" class="fill_horizontally">
-			<input class="fill_horizontally text" type="text" name="n" value="3"><br>
+			<input class="fill_horizontally text input-verticies-count" type="text" name="n" value="3"><br>
 		</div>
-		<table id="table">
-		  <tr>
-			<td><input type="text" class="table-input" placeholder="0"></td>
-			<td><input type="text" class="table-input" placeholder="0"></td> 
-			<td><input type="text" class="table-input" placeholder="0"></td>
-		  </tr>
-		  <tr>
-			<td><input type="text" class="table-input" placeholder="0"></td>
-			<td><input type="text" class="table-input" placeholder="0"></td> 
-			<td><input type="text" class="table-input" placeholder="0"></td>
-		  </tr>
-		  <tr>
-			<td><input type="text" class="table-input" placeholder="0"></td>
-			<td><input type="text" class="table-input" placeholder="0"></td> 
-			<td><input type="text" class="table-input" placeholder="0"></td>
-		  </tr>
+		<table id="table" class="verticies_table">
+
 		</table>
 		<button class="button button-padding">Посчитать</button>
 	</div>
 
 	<div class="solution_card">
-		<table id="table1">
-			<tr>
-				<td><input type="text" class="table-input" placeholder="0"></td>
-				<td><input type="text" class="table-input" placeholder="0"></td> 
-				<td><input type="text" class="table-input" placeholder="0"></td>
-			</tr>
-			<tr>
-				<td><input type="text" class="table-input" placeholder="0"></td>
-				<td><input type="text" class="table-input" placeholder="0"></td> 
-				<td><input type="text" class="table-input" placeholder="0"></td>
-			</tr>
-			<tr>
-				<td><input type="text" class="table-input" placeholder="0"></td>
-				<td><input type="text" class="table-input" placeholder="0"></td> 
-				<td><input type="text" class="table-input" placeholder="0"></td>
-			</tr>
+		<table id="table1" class="verticies_table">
+			
 		</table>
 		 <div class="padding-top">
 		 	Свойства<br>
@@ -57,3 +29,7 @@
 		</div>
 	</div>
 </div>
+
+<script>
+	handleResize();
+</script>
