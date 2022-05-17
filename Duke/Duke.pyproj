@@ -31,6 +31,7 @@
   </PropertyGroup>
   <ItemGroup>
     <Compile Include="app.py" />
+    <Compile Include="MaxFlow.py" />
     <Compile Include="routes.py" />
   </ItemGroup>
   <ItemGroup>
