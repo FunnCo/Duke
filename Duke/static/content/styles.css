@@ -79,6 +79,10 @@
     margin-top: 2rem;
 }
 
+.big-padding {
+    margin-top: 5rem;
+}
+
 html, body {
     margin: 0px;
     padding: 0px;
@@ -135,6 +139,10 @@ html, body {
 .heading {
     font-size: 35px;
     letter-spacing: 2px;
+}
+
+.title {
+    font-size: 28px;
 }
 
 .description {
@@ -194,6 +202,13 @@ html, body {
     height: 500px;
 }
 
+.image_main {
+    border-radius: 8px;
+    width: 500px;
+    object-fit: cover;
+    height: 500px;
+}
+
 .normal-letters {
     letter-spacing: 2px;
 }
@@ -204,6 +219,12 @@ html, body {
 
 .margin-50rem-right {
     margin-right: 50rem;
+}
+
+.underlined-link {
+    color: white;
+    font-style: normal;
+    text-decoration: underline;
 }
 
 .link {
