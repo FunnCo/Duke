@@ -32,6 +32,7 @@
   <ItemGroup>
     <Compile Include="app.py" />
     <Compile Include="MaxFlow.py" />
+    <Compile Include="RelationHandler.py" />
     <Compile Include="routes.py" />
   </ItemGroup>
   <ItemGroup>
