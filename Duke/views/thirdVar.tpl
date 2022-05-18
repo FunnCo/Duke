@@ -18,7 +18,7 @@
 			<div class="small-padding-top" class="fill_horizontally">
 				<input class="fill_horizontally text input-verticies-count" type="text" name="n" value="3"><br>
 			</div>
-			<table id="table" class="verticies_table">
+			<table id="table" class="verticies_table non-binary-table">
 			</table>
 			<button class="button button-padding" id="calculate">Посчитать</button>
 		</div>
