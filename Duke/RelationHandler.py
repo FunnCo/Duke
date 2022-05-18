@@ -19,7 +19,7 @@ class BinaryRelation:
     def checkTransitive(self):
         isTransitive = False
 
-        # Проверка на транзитивность
+        # РџСЂРѕРІРµСЂРєР° РЅР° С‚СЂР°РЅР·РёС‚РёРІРЅРѕСЃС‚СЊ
         for rowIndex in range(0, len(self.graph)):
             for columnIndex in range(0, len(self.graph)):
                 currentValue = self.graph[rowIndex][columnIndex]
@@ -37,7 +37,7 @@ class BinaryRelation:
     def checkAntiTransitive(self):
         isAntiTransitive = False
 
-        # Проверка на транзитивность
+        # РџСЂРѕРІРµСЂРєР° РЅР° Р°РЅС‚РёС‚СЂР°РЅР·РёС‚РёРІРЅРѕСЃС‚СЊ
         for rowIndex in range(0, len(self.graph)):
             for columnIndex in range(0, len(self.graph)):
                 currentValue = self.graph[rowIndex][columnIndex]
@@ -54,7 +54,7 @@ class BinaryRelation:
     def checkForFeatures(self):
         result = []
 
-        # Проверка на рефлексивность
+        # РџСЂРѕРІРµСЂРєР° РЅР° СЂРµС„Р»РµРєСЃРёРІРЅРѕСЃС‚СЊ
         isReflective = True
         for row in range(0, len(self.graph)):
             if(self.graph[row][row] == 0):
@@ -64,10 +64,8 @@ class BinaryRelation:
         if(isReflective):
             result.append(Features.REFLECTIVE)
 
-        # Проверка на симметрию и ассиметрию
+        # РџСЂРѕРІРµСЂРєР° РЅР° СЃРёРјРјРµС‚СЂРёСЋ Рё Р°СЃСЃРёРјРµС‚СЂРёСЋ
         isSymmetric = True
-
-        # Убрать, если только код только для 1 варианта
         isAsymmetric = True
 
         for rowIndex in range(0, len(self.graph)):
@@ -78,12 +76,9 @@ class BinaryRelation:
 
                 if(currentValue + mirroredValue != 0):
                     if(currentValue + mirroredValue == 2):
-                        if(rowIndex != columnIndex):
-                            isAsymmetric = False
+                        isAsymmetric = False
                     else:
                         isSymmetric = False
-
-        
 
         if(isSymmetric):
             result.append(Features.SYMMETRIC)
