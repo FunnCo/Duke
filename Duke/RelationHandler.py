@@ -5,6 +5,8 @@ class Features(Enum):
     REFLECTIVE = 1
     SYMMETRIC = 2
     TRANSITIVE = 3
+    ASYMMETRIC = 4
+    ANTI_TRANSITIVE = 5
 
 
 class BinaryRelation:
@@ -32,6 +34,23 @@ class BinaryRelation:
 
         return isTransitive
 
+    def checkAntiTransitive(self):
+        isAntiTransitive = False
+
+        # Проверка на транзитивность
+        for rowIndex in range(0, len(self.graph)):
+            for columnIndex in range(0, len(self.graph)):
+                currentValue = self.graph[rowIndex][columnIndex]
+                if(currentValue == 0):
+                    for secondIndex in range(0, len(self.graph)):
+                        secondValue = self.graph[columnIndex][secondIndex]
+                        if(secondValue == 0 and secondIndex != columnIndex):
+                            if(self.graph[rowIndex][secondIndex] == 0):
+                                isAntiTransitive = True
+                            elif(isAntiTransitive):
+                                return False
+        return isAntiTransitive
+
     def checkForFeatures(self):
         result = []
 
@@ -48,22 +67,33 @@ class BinaryRelation:
         # Проверка на симметрию и ассиметрию
         isSymmetric = True
 
+        # Убрать, если только код только для 1 варианта
+        isAsymmetric = True
+
         for rowIndex in range(0, len(self.graph)):
             for columnIndex in range(0, rowIndex + 1):
 
                 currentValue = self.graph[rowIndex][columnIndex]
                 mirroredValue = self.graph[columnIndex][rowIndex]
 
-               
                 if(currentValue + mirroredValue != 0):
-                    if(currentValue + mirroredValue != 2):
+                    if(currentValue + mirroredValue == 2):
+                        if(rowIndex != columnIndex):
+                            isAsymmetric = False
+                    else:
                         isSymmetric = False
+
+        
 
         if(isSymmetric):
             result.append(Features.SYMMETRIC)
+        elif(isAsymmetric):
+            result.append(Features.ASYMMETRIC)
 
         if(self.checkTransitive() == True):
             result.append(Features.TRANSITIVE)
+        elif(self.checkAntiTransitive() == True):
+            result.append(Features.ANTI_TRANSITIVE)
 
         return result
 
