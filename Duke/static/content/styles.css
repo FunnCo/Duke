@@ -75,12 +75,16 @@
     padding-top: 1rem;
 }
 
+.big-padding {
+    margin-top: 5rem;
+}
+
 .button-padding {
     margin-top: 2rem;
 }
 
-.big-padding {
-    margin-top: 5rem;
+.small-margin-top {
+    margin-top: 1rem;
 }
 
 html, body {
