@@ -11,21 +11,21 @@
 <div class="cards_container">
 	<div class="solution_card">
 		Количество вершин графа<br>
-		<div class="small-padding-top">
+		<div class="top_padding_05">
 			<input class="fill_horizontally text input-verticies-count" type="text" name="n" value="3"><br>
 		</div>
 		<table id="table" class="verticies_table input-table">
 		</table>
-		<button class="button button-padding" id="calculate">Посчитать</button>
+		<button class="button top_margin_2" id="calculate">Посчитать</button>
 	</div>
 
 	<div class="solution_card">
 		Дополнительное отношение<br>
-		<table id="table1" class="verticies_table small-margin-top output-table">
+		<table id="table1" class="verticies_table top_margin_1 output-table">
 		</table>
-		<div class="padding-top">
+		<div class="top_padding_1">
 		 	Свойства<br>
-			<div class="small-padding-top" class="fill_horizontally">
+			<div class="top_padding_05" class="fill_horizontally">
 				<textarea class="fill_horizontally text" name="text" id="features-result" rows="4"></textarea>
 			</div>
 		</div>

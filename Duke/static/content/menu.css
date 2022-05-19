@@ -17,6 +17,14 @@ html, body {
     background: #181818;
 }
 
+h1 {
+    color: white
+}
+
+.letters-spacing {
+    letter-spacing: 4px;
+}
+
 .top-panel_overlay {
     z-index: 9;
     font-weight: 600;
@@ -54,10 +62,14 @@ html, body {
     margin-left: 16rem;
 }
 
-h1 {
-    color: white
+.tasks {
+    position: relative;
 }
 
+#tasksText {
+    margin-left: 5rem;
+    margin-right: 5rem;
+}
 
 .dropdown a {
     display: inline-block;
@@ -75,10 +87,6 @@ h1 {
         color: white;
         transition: all 0.25s ease;
     }
-
-.letters-spacing {
-    letter-spacing: 4px;
-}
 
 .ul-dropdown {
     list-style: none;
@@ -109,10 +117,6 @@ h1 {
     height: 150%;
 }
 
-.tasks {
-    position: relative;
-}
-
 .dropdown {
     background: #333;
     display: flex;
@@ -126,9 +130,4 @@ h1 {
     opacity: 100%;
     pointer-events: all;
     transform: translateY(35px);
-}
-
-#tasksText {
-    margin-left: 5rem;
-    margin-right: 5rem;
 }
