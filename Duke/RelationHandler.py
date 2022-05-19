@@ -1,29 +1,41 @@
 from enum import Enum
 
 
+# Перечисление для пердставления всех свойств графа
 class Features(str, Enum):
     REFLECTIVE = "рефлективность"
     SYMMETRIC = "симметричность"
     TRANSITIVE = "транзитивность"
     ASYMMETRIC = "асимметричность"
     ANTI_TRANSITIVE = "антитранзитивность"
-
-
+    
+# Класс для работы с бинарными отношениями
 class BinaryRelation:
 
+    # Матрица смежности графа
     graph = None
 
+    # Конструктор класса
     def __init__(self, graph):
         self.graph = graph
 
+    # Метод проверки графа на транзитивность
     def checkTransitive(self):
         isTransitive = False
 
-        # Проверка на транзитивность
+        # Внешний цикл, перебирающий все строки (i индекс,
+        # если смотреть на формальное представление транзитивности)
         for rowIndex in range(0, len(self.graph)):
+            
+            # Цикл, перебирающий все значения в строке (j элемент)
+            # если смотреть на формальное представление транзитивности)
             for columnIndex in range(0, len(self.graph)):
                 currentValue = self.graph[rowIndex][columnIndex]
+
+                # Пропуск петель в графе
                 if(currentValue == 1 and rowIndex != columnIndex):
+
+                    # Цикл, перебирающий k значения
                     for secondIndex in range(0, len(self.graph)):
                         secondValue = self.graph[columnIndex][secondIndex]
                         if(secondValue == 1 and secondIndex != columnIndex):
@@ -33,15 +45,22 @@ class BinaryRelation:
                                 return False
 
         return isTransitive
-
+    
+    # Метод проверки графа на транзитивность
     def checkAntiTransitive(self):
         isAntiTransitive = False
-
-        # Проверка на антитранзитивность
+        
+        # Цикл, перебирающий все значения в строке (j элемент)
+        # если смотреть на формальное представление антитранзитивности)
         for rowIndex in range(0, len(self.graph)):
+
+            # Цикл, перебирающий все значения в строке (j элемент)
+            # если смотреть на формальное представление антитранзитивности)
             for columnIndex in range(0, len(self.graph)):
                 currentValue = self.graph[rowIndex][columnIndex]
                 if(currentValue == 0):
+
+                    # Цикл, перебирающий k значения
                     for secondIndex in range(0, len(self.graph)):
                         secondValue = self.graph[columnIndex][secondIndex]
                         if(secondValue == 0 and secondIndex != columnIndex):
@@ -51,6 +70,8 @@ class BinaryRelation:
                                 return False
         return isAntiTransitive
 
+    # Метод получения списка свойств из представленных в представлении Features
+    # которыми обладает данный граф 
     def checkForFeatures(self):
         result = []
 
@@ -67,13 +88,10 @@ class BinaryRelation:
         # Проверка на симметрию и ассиметрию
         isSymmetric = True
         isAsymmetric = True
-
         for rowIndex in range(0, len(self.graph)):
             for columnIndex in range(0, rowIndex + 1):
-
                 currentValue = self.graph[rowIndex][columnIndex]
                 mirroredValue = self.graph[columnIndex][rowIndex]
-
                 if(currentValue + mirroredValue != 0):
                     if(currentValue + mirroredValue == 2):
                         isAsymmetric = False
@@ -92,6 +110,8 @@ class BinaryRelation:
 
         return result
 
+    # Метод получения дополнительного отношения к представляемому этим классом. 
+    # Метод возвращает матрицу смежности необходимого отношения
     def getAdditionalRelation(self):
         additionalRelation = []
 
@@ -103,6 +123,8 @@ class BinaryRelation:
 
         return additionalRelation
 
+    # Метод получения обратного отношения к представляемому этим классом. 
+    # Метод возвращает матрицу смежности необходимого отношения
     def getInversedRelation(self):
         inversedRelation = []
 
