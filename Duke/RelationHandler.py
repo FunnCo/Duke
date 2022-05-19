@@ -1,12 +1,12 @@
 from enum import Enum
 
 
-class Features(Enum):
-    REFLECTIVE = 1
-    SYMMETRIC = 2
-    TRANSITIVE = 3
-    ASYMMETRIC = 4
-    ANTI_TRANSITIVE = 5
+class Features(str, Enum):
+    REFLECTIVE = "СЂРµС„Р»РµРєС‚РёРІРЅРѕСЃС‚СЊ"
+    SYMMETRIC = "СЃРёРјРјРµС‚СЂРёС‡РЅРѕСЃС‚СЊ"
+    TRANSITIVE = "С‚СЂР°РЅР·РёС‚РёРІРЅРѕСЃС‚СЊ"
+    ASYMMETRIC = "Р°СЃРёРјРјРµС‚СЂРёС‡РЅРѕСЃС‚СЊ"
+    ANTI_TRANSITIVE = "Р°РЅС‚РёС‚СЂР°РЅР·РёС‚РёРІРЅРѕСЃС‚СЊ"
 
 
 class BinaryRelation:
@@ -19,7 +19,7 @@ class BinaryRelation:
     def checkTransitive(self):
         isTransitive = False
 
-        # Проверка на транзитивность
+        # РџСЂРѕРІРµСЂРєР° РЅР° С‚СЂР°РЅР·РёС‚РёРІРЅРѕСЃС‚СЊ
         for rowIndex in range(0, len(self.graph)):
             for columnIndex in range(0, len(self.graph)):
                 currentValue = self.graph[rowIndex][columnIndex]
@@ -37,7 +37,7 @@ class BinaryRelation:
     def checkAntiTransitive(self):
         isAntiTransitive = False
 
-        # Проверка на транзитивность
+        # РџСЂРѕРІРµСЂРєР° РЅР° С‚СЂР°РЅР·РёС‚РёРІРЅРѕСЃС‚СЊ
         for rowIndex in range(0, len(self.graph)):
             for columnIndex in range(0, len(self.graph)):
                 currentValue = self.graph[rowIndex][columnIndex]
@@ -54,7 +54,7 @@ class BinaryRelation:
     def checkForFeatures(self):
         result = []
 
-        # Проверка на рефлексивность
+        # РџСЂРѕРІРµСЂРєР° РЅР° СЂРµС„Р»РµРєСЃРёРІРЅРѕСЃС‚СЊ
         isReflective = True
         for row in range(0, len(self.graph)):
             if(self.graph[row][row] == 0):
@@ -64,10 +64,10 @@ class BinaryRelation:
         if(isReflective):
             result.append(Features.REFLECTIVE)
 
-        # Проверка на симметрию и ассиметрию
+        # РџСЂРѕРІРµСЂРєР° РЅР° СЃРёРјРјРµС‚СЂРёСЋ Рё Р°СЃСЃРёРјРµС‚СЂРёСЋ
         isSymmetric = True
 
-        # Убрать, если только код только для 1 варианта
+        # РЈР±СЂР°С‚СЊ, РµСЃР»Рё С‚РѕР»СЊРєРѕ РєРѕРґ С‚РѕР»СЊРєРѕ РґР»СЏ 1 РІР°СЂРёР°РЅС‚Р°
         isAsymmetric = True
 
         for rowIndex in range(0, len(self.graph)):

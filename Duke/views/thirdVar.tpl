@@ -8,17 +8,17 @@
 		 <div class="solution_card">
 			Координаты источника<br>
 			<div class="small-padding-top" class="fill_horizontally">
-				<input class="fill_horizontally text" type="text" name="n" value=""><br>
+				<input class="fill_horizontally text" type="text" name="n" id="source" value=""><br>
 			</div>
 			Координаты стока<br>
 			<div class="small-padding-top" class="fill_horizontally">
-				<input class="fill_horizontally text" type="text" name="n" value=""><br>
+				<input class="fill_horizontally text" type="text" name="n" id="sink" value=""><br>
 			</div>
 			Количество вершин графа<br>
 			<div class="small-padding-top" class="fill_horizontally">
 				<input class="fill_horizontally text input-verticies-count" type="text" name="n" value="3"><br>
 			</div>
-			<table id="table" class="verticies_table non-binary-table">
+			<table id="table" class="verticies_table non-binary-table input-table">
 			</table>
 			<button class="button button-padding" id="calculate">Посчитать</button>
 		</div>
@@ -26,7 +26,7 @@
 		<h2>Результат</h2>
 		<div class="solution_card">
 			<div class="small-padding-top" class="fill_horizontally">
-				<input class="fill_horizontally text" type="text" name="n" value=""><br>
+				<input class="fill_horizontally text" id="flow-result" type="text" name="n" value=""><br>
 			</div>
 		</div>
 	</div>
@@ -34,4 +34,57 @@
 
 <script>
 	handleResize();
+
+	var verticiesElement = $(".input-verticies-count")
+
+	$('#sink').on('click', function() {
+		$(this).select()
+	})
+
+	$('#sink').on('input', function() {
+
+		if(isNaN($(this).val()) || $(this).val() < 0 || $(this).val() > verticiesElement.val()){
+			$('#sink').val(1)
+		}
+		$(this).select()
+	})
+
+	$('#source').on('click', function() {
+		$(this).select()
+	})
+
+	$('#source').on('input', function() {
+		var currentValue = $(this).val()
+
+		if(currentValue < 1 || currentValue > verticiesElement.val()){
+			$('#source').val(1)
+		}
+		$(this).select()
+	})
+
+	$('#calculate').on('click', function() {
+		var body = {}
+
+		var graph = []
+		var verticies = $(".input-verticies-count").val();
+		var table = $('.input-table');
+        for (var r = 0; r < verticies; r++) {
+            var currentRow = []
+            for (var c = 0; c < verticies; c++){
+                currentRow.push(parseInt($(`#input-item${r}${c}`).val()))
+			}
+            graph.push(currentRow)
+        }
+		body["inputArray"] = graph
+		body["source"] = parseInt($("#source").val())-1
+		body["sink"] = parseInt($("#sink").val())-1
+			console.log(body)
+		calculateMaxFlow(body, function(data){
+			console.log(data)
+			
+			var resultBox = $('#flow-result')
+			console.log(data['result'])
+			resultBox.val(data['result'])
+		})
+	})
 </script>

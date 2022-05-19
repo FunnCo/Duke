@@ -28,9 +28,9 @@ function generateTable() {
             var tr = $('<tr>');
             for (var c = 0; c < verticies; c++)
                 if (table.attr("id") == "table1") {
-                    $('<td><input type="text" class="table-input" value="0" readonly></td>').appendTo(tr);
+                    $(`<td><input type="text" id="output-item${r}${c}" class="table-input" value="0" readonly></td>`).appendTo(tr);
                 } else {
-                    $('<td><input type="text" class="table-input" value="0"></td>').appendTo(tr);
+                    $(`<td><input type="text" id="input-item${r}${c}" class="table-input" value="0"></td>`).appendTo(tr);
                 }
             tr.appendTo(table);
         }
@@ -39,14 +39,14 @@ function generateTable() {
         })
         $('.table-input').on('input', function () {
 
-            var isBinary = $(this).parents().hasClass('non-binary-table')
+            var isBinary = $(this).parents().hasClass('non-binary-table');
 
             if (!isBinary) {
-                $(this).select()
+                $(this).select();
             }
 
             if (isNaN($(this).val()) || $(this).val() < 0 || $(this).val() > 1 && !isBinary) {
-                $(this).val(0)
+                $(this).val(0);
             }
 
         })
