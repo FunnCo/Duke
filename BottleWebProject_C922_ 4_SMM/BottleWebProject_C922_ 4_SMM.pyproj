@@ -31,9 +31,9 @@
   </PropertyGroup>
   <ItemGroup>
     <Compile Include="app.py" />
-    <Compile Include="MaxFlow.py" />
-    <Compile Include="RelationHandler.py" />
-    <Compile Include="Repository.py">
+    <Compile Include="max_flow.py" />
+    <Compile Include="relation_handler.py" />
+    <Compile Include="repository.py">
       <SubType>Code</SubType>
     </Compile>
     <Compile Include="routes.py" />
@@ -75,11 +75,11 @@
     <Content Include="static\scripts\table-resize-handler.js" />
     <Content Include="static\scripts\_references.js" />
     <Content Include="views\about.tpl" />
-    <Content Include="views\firstVar.tpl" />
+    <Content Include="views\binary_relation_1.tpl" />
     <Content Include="views\layout.tpl" />
-    <Content Include="views\main.tpl" />
-    <Content Include="views\secondVar.tpl" />
-    <Content Include="views\thirdVar.tpl" />
+    <Content Include="views\index.tpl" />
+    <Content Include="views\binary_relation_2.tpl" />
+    <Content Include="views\max_flow.tpl" />
   </ItemGroup>
   <ItemGroup>
     <Interpreter Include="env\">

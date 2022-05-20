@@ -24,9 +24,9 @@
                     <div class="tasks">
                         <a href="#" id="tasksText">ЗАДАНИЯ</a>          
                         <ul class="ul-dropdown">
-                            <li class="li-dropdown"><a class="a-dropdown" href="./firstVar">СВОЙСТВА ОТНОШЕНИЙ 1</a>
-                            <li class="li-dropdown"><a class="a-dropdown" href="./secondVar">СВОЙСТВА ОТНОШЕНИЙ 2</a>  
-                            <li class="li-dropdown"><a class="a-dropdown" href="./thirdVar">МАКСИМАЛЬНЫЙ ПОТОК</a>  
+                            <li class="li-dropdown"><a class="a-dropdown" href="./binary_relation_1">СВОЙСТВА ОТНОШЕНИЙ 1</a>
+                            <li class="li-dropdown"><a class="a-dropdown" href="./binary_relation_2">СВОЙСТВА ОТНОШЕНИЙ 2</a>  
+                            <li class="li-dropdown"><a class="a-dropdown" href="./max_flow">МАКСИМАЛЬНЫЙ ПОТОК</a>  
                         </ul>
                     </div>                      
                 </div>

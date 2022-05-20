@@ -5,13 +5,13 @@
     <div class="description_container">
         <div class="top_margin_5">
             <p class="title">Веб-сайт Duke позволяет быстро и удобно решать задачи по математическому моделированию:</p>
-            <a href="/firstVar" class="underlined-link">
+            <a href="/binary_relation_1" class="underlined-link">
                 <p class="description">Калькулятор свойств отношений (с нахождением дополнительного)</p>
             </a>
-            <a href="/secondVar" class="underlined-link">
+            <a href="/binary_relation_2" class="underlined-link">
                 <p class="description">Калькулятор свойств отношений (с нахождением обратного)</p>
             </a>
-            <a href="/thirdVar" class="underlined-link">
+            <a href="/max_flow" class="underlined-link">
                 <p class="description">Калькулятор максимального потока</p>
             </a>
         </div>

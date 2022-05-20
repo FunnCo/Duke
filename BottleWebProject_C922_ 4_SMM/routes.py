@@ -3,7 +3,7 @@ from datetime import datetime
 
 @route('/')
 @route('/main')
-@view('main')
+@view('index')
 def main():
     return dict(year=datetime.now().year)
 
@@ -12,17 +12,17 @@ def main():
 def about():
     return dict(year=datetime.now().year)
 
-@route('/firstVar')
-@view('firstVar')
+@route('/binary_relation_1')
+@view('binary_relation_1')
 def firstVar():
     return dict(year=datetime.now().year)
 
-@route('/secondVar')
-@view('secondVar')
+@route('/binary_relation_2')
+@view('binary_relation_2')
 def secondVar():
     return dict(year=datetime.now().year)
 
-@route('/thirdVar')
-@view('thirdVar')
+@route('/max_flow')
+@view('max_flow')
 def thirdVar():
     return dict(year=datetime.now().year)

@@ -1,7 +1,7 @@
 from bottle import post, request, response
-from RelationHandler import BinaryRelation, Features
+from relation_handler import BinaryRelation, Features
 import json
-from MaxFlow import solve_max_flow
+from max_flow import solve_max_flow
 
 # Метод для сравнения 2 спсиков, возвращает True, если спсики совпадают, и False в ином случае
 def assertLists(list1, list2):
