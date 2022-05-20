@@ -10,13 +10,13 @@
 			Координаты источника<br>
 			</div>
 			<div class="top_padding_05">
-				<input class="fill_horizontally text" type="text" name="n" id="source" value=""><br>
+				<input class="fill_horizontally text" type="text" name="n" id="source" value="1"><br>
 			</div>
 			<div class="top_padding_05">
 			Координаты стока<br>
 			</div>
 			<div class="top_padding_05">
-				<input class="fill_horizontally text" type="text" name="n" id="sink" value=""><br>
+				<input class="fill_horizontally text" type="text" name="n" id="sink" value="1"><br>
 			</div>
 			<div class="top_padding_05">
 			Количество вершин графа<br>
@@ -49,7 +49,7 @@
 
 	$('#sink').on('input', function() {
 
-		if(isNaN($(this).val()) || $(this).val() < 0 || $(this).val() > verticiesElement.val()){
+		if(isNaN($(this).val()) || $(this).val() < 0 || $(this).val() > verticiesElement.val() || !$(this).val()){
 			$('#sink').val(1)
 		}
 		$(this).select()
@@ -62,7 +62,7 @@
 	$('#source').on('input', function() {
 		var currentValue = $(this).val()
 
-		if(currentValue < 1 || currentValue > verticiesElement.val()){
+		if(isNaN(currentValue) || currentValue < 1 || currentValue > verticiesElement.val() || !currentValue){
 			$('#source').val(1)
 		}
 		$(this).select()

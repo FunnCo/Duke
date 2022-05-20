@@ -45,7 +45,7 @@ function generateTable() {
                 $(this).select();
             }
 
-            if (isNaN($(this).val()) || $(this).val() < 0 || $(this).val() > 1 && !isBinary) {
+            if (isNaN($(this).val()) || $(this).val() < 0 || $(this).val() > 1 && !isBinary || !$(this).val()) {
                 $(this).val(0);
             }
 
