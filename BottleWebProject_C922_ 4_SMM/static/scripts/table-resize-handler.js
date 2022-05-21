@@ -26,7 +26,7 @@ function generateTable() {
 
     // Обработка случае при некорректном количстве вершин
     var verticiesInput = $('.input-verticies-count');
-    if (isNaN(verticiesInput.val()) || verticiesInput.val() < 2 || verticiesInput.val() > 9) {
+    if (isNaN(verticiesInput.val()) || verticiesInput.val() < 2 || verticiesInput.val() > 9 || !verticiesInput.val()) {
         verticiesInput.val(2);
         verticiesInput.select();
     }
@@ -73,7 +73,7 @@ function generateTable() {
             }
 
             // Обработка некорректного ввода
-            if (isNaN($(this).val()) || $(this).val() < 0 || $(this).val() > 1 && !isBinary) {
+            if (isNaN($(this).val()) || $(this).val() < 0 || $(this).val() > 1 && !isBinary || !$(this).val()) {
                 $(this).val(0);
             }
 

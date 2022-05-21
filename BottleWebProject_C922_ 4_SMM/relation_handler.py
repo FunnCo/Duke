@@ -27,7 +27,7 @@ class BinaryRelation:
         # если смотреть на формальное представление транзитивности)
         for rowIndex in range(0, len(self.graph)):
             
-            # Цикл, перебирающий все значения в строке (j элемент)
+            # Цикл, перебирающий все значения в строке (l элемент)
             # если смотреть на формальное представление транзитивности)
             for columnIndex in range(0, len(self.graph)):
                 currentValue = self.graph[rowIndex][columnIndex]
@@ -35,7 +35,7 @@ class BinaryRelation:
                 # Пропуск петель в графе
                 if(currentValue == 1 and rowIndex != columnIndex):
 
-                    # Цикл, перебирающий k значения
+                    # Цикл, перебирающий j значения
                     for secondIndex in range(0, len(self.graph)):
                         secondValue = self.graph[columnIndex][secondIndex]
                         if(secondValue == 1 and secondIndex != columnIndex):
