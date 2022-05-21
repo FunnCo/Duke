@@ -20,6 +20,9 @@
     <RootNamespace>Duke</RootNamespace>
     <InterpreterId>Global|PythonCore|3.9</InterpreterId>
     <IsWindowsApplication>False</IsWindowsApplication>
+    <TestFramework>unittest</TestFramework>
+    <UnitTestPattern>test*.py</UnitTestPattern>
+    <UnitTestRootDirectory>./tests</UnitTestRootDirectory>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)' == 'Debug' ">
     <DebugSymbols>true</DebugSymbols>
@@ -37,12 +40,25 @@
       <SubType>Code</SubType>
     </Compile>
     <Compile Include="routes.py" />
+    <Compile Include="tests\relation_1_tests\test_relation_1.py">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="tests\relation_1_tests\__init__.py">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="tests\__init__.py">
+      <SubType>Code</SubType>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
+    <Folder Include="tests\" />
     <Folder Include="static\" />
     <Folder Include="static\content\" />
     <Folder Include="static\fonts\" />
     <Folder Include="static\scripts\" />
+    <Folder Include="tests\max_flow_tests\" />
+    <Folder Include="tests\relation_2_tests\" />
+    <Folder Include="tests\relation_1_tests\" />
     <Folder Include="views\" />
   </ItemGroup>
   <ItemGroup>

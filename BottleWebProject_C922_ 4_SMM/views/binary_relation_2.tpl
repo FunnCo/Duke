@@ -58,9 +58,9 @@
 			var resultBox = $('#features-result')
 			resultBox.val('')
 			if(data['isEquivalent']){
-				resultBox.val(resultBox.val() + "Соответсвует условиям задачи\n\n")
+				resultBox.val(resultBox.val() + "Соответствует условиям задачи\n\n")
 			} else {
-				resultBox.val(resultBox.val() + "Не соответсвует условиям задачи\n\n")
+				resultBox.val(resultBox.val() + "Не соответствует условиям задачи\n\n")
 			}
 			resultBox.val(resultBox.val() + "Свойства введенного графа:\n")
 			data['features'].forEach(element => resultBox.val(resultBox.val() + element + " "))
