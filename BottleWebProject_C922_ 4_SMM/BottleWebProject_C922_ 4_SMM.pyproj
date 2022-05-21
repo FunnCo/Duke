@@ -46,11 +46,11 @@
     <Compile Include="tests\relation_1_tests\__init__.py">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Include="tests\relation_2_tests\__init__.py" />
     <Compile Include="tests\__init__.py">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="test_relation_2.py" />
-    <Compile Include="__init__.py" />
+    <Compile Include="tests\relation_2_tests\test_relation_2.py" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="tests\" />
