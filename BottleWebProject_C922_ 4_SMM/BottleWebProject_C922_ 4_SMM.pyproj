@@ -33,7 +33,7 @@
     <Compile Include="app.py" />
     <Compile Include="max_flow.py" />
     <Compile Include="relation_handler.py" />
-    <Compile Include="repository.py">
+    <Compile Include="http_handler.py">
       <SubType>Code</SubType>
     </Compile>
     <Compile Include="routes.py" />

@@ -1,75 +1,73 @@
-# This class represents a directed graph
-# using adjacency matrix representation
+# Этот класс представляет ориентированный граф
+# используя матрицу пропускных способностей
 class Graph:
 
+    # Конструктор, с параметром в виде матрицы пропускных способностей
     def __init__(self, graph):
-        self.graph = graph  # residual graph
+        self.graph = graph  
         self.ROW = len(graph)
 
-    '''Returns true if there is a path from source 's' to sink 't' in
-    residual graph. Also fills parent[] to store the path '''
 
+    '''Возвращает true если существует путь из источника 's' в сток 't' в
+    остаточном графе. Также заполняет parent[] для хранения пути '''
     def BFS(self, s, t, parent):
 
-        # Mark all the vertices as not visited
+        # Объявление всех вершин непосещенными
         visited = [False] * self.ROW
 
-        # Create a queue for BFS
+        # Объявление очереди для поиска
         queue = [s]
 
-        # Mark the source node as visited and enqueue it
+        # Отметка о посещении вершины с источником
         visited[s] = True
 
-        # Standard BFS Loop
+        # Цикл поиска в ширину
         while queue:
 
-            # Dequeue a vertex from queue and print it
+            # Получение следующей вершины из очереди
             u = queue.pop(0)
 
-            # Get all adjacent vertices of the dequeued vertex u
-            # If an adjacent has not been visited, then mark it
-            # visited and enqueue it
+            # Получение всех смежных вершин с взятой из очереди
+            # Если смежная вершина не была посещена, тогда она отмечается
+            # посещенной и добавляется в очередь
             for ind, val in enumerate(self.graph[u]):
                 if visited[ind]==False and val > 0:
-                    # If we find a connection to the sink node,
-                    # then there is no point in BFS anymore.
-                    # We just have to set its parent and can return true
+                    # Если будет найден путь в сток
+                    # тогда поиск больше не имеет значения.
+                    # В таком случае необходимо установить его родительский элемент и вернуть true
                     queue.append(ind)
                     visited[ind] = True
                     parent[ind] = u
                     if ind == t:
                         return True
 
-        # We didn't reach sink in BFS starting
-        # from source, so return false
+        # Путь в сток из источника не был найден
+        # Значит необходимо вернуть false
         return False
 
-    # Returns the maximum flow from s to t in the given graph
+    # Возвращает значение максимального потока из s в t в заданном графе
     def FordFulkerson(self, source, sink):
 
-        # This array is filled by BFS and to store path
+        # Этот массив заполняется в BFS (поиск в ширину) и хранит путь
         parent = [-1] * self.ROW
 
-        # There is no flow initially
+        # Изначально потока нет
         max_flow = 0 
 
-        # Augment the flow while there is path from source to sink
+        # Увеличение значения потока, пока есть путь из источника в сток
         while self.BFS(source, sink, parent):
 
-            # Find minimum residual capacity of the edges along the
-            # path filled by BFS. Or we can say find the maximum flow
-            # through the path found.
+            # Найти максимальный поток в найденном пути
             path_flow = float("Inf")
             s = sink
             while s != source:
                 path_flow = min(path_flow, self.graph[parent[s]][s])
                 s = parent[s]
 
-            # Add path flow to overall flow
+            # Добавить поток в данном пути в общий поток
             max_flow += path_flow
 
-            # update residual capacities of the edges and reverse edges
-            # along the path
+            # Обновление остаточных емкостей вершин их их инверсирование вдоль пути
             v = sink
             while v != source:
                 u = parent[v]
@@ -82,14 +80,10 @@ class Graph:
 
 def solve_max_flow(graph, source, sink):
     if source==sink:
-        return "Incorrect input! Source and sink are the same!"
-    for edge in graph:
-        for point in edge:
-            if point<0:
-                return "Incorrect input! Negative number!"
+        return "Некорректный ввод! Источник и сток одинаковы!"
     g = Graph(graph)
     result = g.FordFulkerson(source, sink)
     if not result == 0:
         return result
     else:
-        return "No flow!"
+        return "Нет потока!"

@@ -1,6 +1,5 @@
 % rebase('layout.tpl', year=year)
 
-<!-- Блок описания -->
 <div>
     <div class="description_container">
         <div class="top_margin_5">

@@ -1,25 +1,21 @@
 """
-This script runs the application using a development server.
+Этот скрипт запускает приложение с использованием сервера разработки.
 """
 
 import bottle
 import os
 import sys
 
-# routes contains the HTTP handlers for our server and must be imported.
+# routes и repository содержат HTTP-обработчики дл¤ сервера и должны быть импортированы.
 import routes
-import repository
+import http_handler
 
 if '--debug' in sys.argv[1:] or 'SERVER_DEBUG' in os.environ:
-    # Debug mode will enable more verbose output in the console window.
-    # It must be set at the beginning of the script.
+    # Режим отладки включает более подробный вывод в консоль
     bottle.debug(True)
 
-def wsgi_app():
-    """Returns the application to make available through wfastcgi. This is used
-    when the site is published to Microsoft Azure."""
-    return bottle.default_app()
 
+# Настройка сервера
 if __name__ == '__main__':
     PROJECT_ROOT = os.path.abspath(os.path.dirname(__file__))
     STATIC_ROOT = os.path.join(PROJECT_ROOT, 'static').replace('\\', '/')
@@ -31,10 +27,8 @@ if __name__ == '__main__':
 
     @bottle.route('/static/<filepath:path>')
     def server_static(filepath):
-        """Handler for static files, used with the development server.
-        When running under a production server such as IIS or Apache,
-        the server should be configured to serve the static files."""
+    # Обработчик статических файлов, используемый с сервером разработки.
         return bottle.static_file(filepath, root=STATIC_ROOT)
 
-    # Starts a local test server.
+    # Запускает локальный сервер.
     bottle.run(server='wsgiref', host=HOST, port=PORT)

@@ -3,62 +3,62 @@ from relation_handler import BinaryRelation, Features
 import json
 from max_flow import solve_max_flow
 
-# Метод для сравнения 2 спсиков, возвращает True, если спсики совпадают, и False в ином случае
+# РњРµС‚РѕРґ РґР»СЏ СЃСЂР°РІРЅРµРЅРёСЏ 2 СЃРїСЃРёРєРѕРІ, РІРѕР·РІСЂР°С‰Р°РµС‚ True, РµСЃР»Рё СЃРїСЃРёРєРё СЃРѕРІРїР°РґР°СЋС‚, Рё False РІ РёРЅРѕРј СЃР»СѓС‡Р°Рµ
 def assertLists(list1, list2):
     return all(item in list1 for item in list2) and all(item in list2 for item in list1)
 
-# Контроллер, обрабатывающий POST запрос на работу первого калькулятора свойств графа
+# РљРѕРЅС‚СЂРѕР»Р»РµСЂ, РѕР±СЂР°Р±Р°С‚С‹РІР°СЋС‰РёР№ POST Р·Р°РїСЂРѕСЃ РЅР° СЂР°Р±РѕС‚Сѓ РїРµСЂРІРѕРіРѕ РєР°Р»СЊРєСѓР»СЏС‚РѕСЂР° СЃРІРѕР№СЃС‚РІ РіСЂР°С„Р°
 @post("/calculate_relation1")
 def calulateRelation1():
     
-    # Получение входных данных
+    # РџРѕР»СѓС‡РµРЅРёРµ РІС…РѕРґРЅС‹С… РґР°РЅРЅС‹С…
     requestBody = json.load(request.body)
     inputArray = requestBody.get('inputArray')
     
-    # Поулчение резлуьтатов обработки входных данных
+    # РџРѕСѓР»С‡РµРЅРёРµ СЂРµР·Р»СѓСЊС‚Р°С‚РѕРІ РѕР±СЂР°Р±РѕС‚РєРё РІС…РѕРґРЅС‹С… РґР°РЅРЅС‹С…
     relation = BinaryRelation(inputArray)
     features = relation.checkForFeatures()
 
-    # Запись результата работы калькулятора в JSON
+    # Р—Р°РїРёСЃСЊ СЂРµР·СѓР»СЊС‚Р°С‚Р° СЂР°Р±РѕС‚С‹ РєР°Р»СЊРєСѓР»СЏС‚РѕСЂР° РІ JSON
     for item in features:
         item = json.dumps(item)
     isEquivalent = assertLists([Features.REFLECTIVE, Features.SYMMETRIC, Features.TRANSITIVE], features)
     additionalRelation = relation.getAdditionalRelation()
 
-    # Возвращение результата обработки в JSON формате
+    # Р’РѕР·РІСЂР°С‰РµРЅРёРµ СЂРµР·СѓР»СЊС‚Р°С‚Р° РѕР±СЂР°Р±РѕС‚РєРё РІ JSON С„РѕСЂРјР°С‚Рµ
     return {'features' : features, 'isEquivalent' : isEquivalent, 'additionalRelation': additionalRelation}
 
-# Контроллер, обрабатывающий POST запрос на работу второго калькулятора свойств графа
+# РљРѕРЅС‚СЂРѕР»Р»РµСЂ, РѕР±СЂР°Р±Р°С‚С‹РІР°СЋС‰РёР№ POST Р·Р°РїСЂРѕСЃ РЅР° СЂР°Р±РѕС‚Сѓ РІС‚РѕСЂРѕРіРѕ РєР°Р»СЊРєСѓР»СЏС‚РѕСЂР° СЃРІРѕР№СЃС‚РІ РіСЂР°С„Р°
 @post("/calculate_relation2")
 def calulateRelation2():
-    # Получение входных данных
+    # РџРѕР»СѓС‡РµРЅРёРµ РІС…РѕРґРЅС‹С… РґР°РЅРЅС‹С…
     requestBody = json.load(request.body)
     inputArray = requestBody.get('inputArray')
 
-    # Поулчение резлуьтатов обработки входных данных
+    # РџРѕСѓР»С‡РµРЅРёРµ СЂРµР·Р»СѓСЊС‚Р°С‚РѕРІ РѕР±СЂР°Р±РѕС‚РєРё РІС…РѕРґРЅС‹С… РґР°РЅРЅС‹С…
     relation = BinaryRelation(inputArray)
     features = relation.checkForFeatures()
 
-    # Запись результата работы калькулятора в JSON
+    # Р—Р°РїРёСЃСЊ СЂРµР·СѓР»СЊС‚Р°С‚Р° СЂР°Р±РѕС‚С‹ РєР°Р»СЊРєСѓР»СЏС‚РѕСЂР° РІ JSON
     for item in features:
         item = json.dumps(item)
     isEquivalent = assertLists([Features.ASYMMETRIC, Features.ANTI_TRANSITIVE], features)
     inversedRelation = relation.getInversedRelation()
 
-    # Возвращение результата обработки в JSON формате
+    # Р’РѕР·РІСЂР°С‰РµРЅРёРµ СЂРµР·СѓР»СЊС‚Р°С‚Р° РѕР±СЂР°Р±РѕС‚РєРё РІ JSON С„РѕСЂРјР°С‚Рµ
     return {'features' : features, 'isEquivalent' : isEquivalent, 'inversedRelation': inversedRelation}
 
-# Контроллер, обрабатывающий POST запрос на вычисление максимального потока
+# РљРѕРЅС‚СЂРѕР»Р»РµСЂ, РѕР±СЂР°Р±Р°С‚С‹РІР°СЋС‰РёР№ POST Р·Р°РїСЂРѕСЃ РЅР° РІС‹С‡РёСЃР»РµРЅРёРµ РјР°РєСЃРёРјР°Р»СЊРЅРѕРіРѕ РїРѕС‚РѕРєР°
 @post("/calculate_maxflow")
 def calulateMaxFlow():
-    # Получение входных данных
+    # РџРѕР»СѓС‡РµРЅРёРµ РІС…РѕРґРЅС‹С… РґР°РЅРЅС‹С…
     requestBody = json.load(request.body).get('result')
     inputArray = requestBody.get('inputArray')
     source = requestBody.get('source')
     sink = requestBody.get('sink')
 
-    # Поулчение резлуьтатов обработки входных данных
+    # РџРѕСѓР»С‡РµРЅРёРµ СЂРµР·Р»СѓСЊС‚Р°С‚РѕРІ РѕР±СЂР°Р±РѕС‚РєРё РІС…РѕРґРЅС‹С… РґР°РЅРЅС‹С…
     result = solve_max_flow(inputArray, source, sink)
 
-    # Возвращение результата обработки в JSON формате
+    # Р’РѕР·РІСЂР°С‰РµРЅРёРµ СЂРµР·СѓР»СЊС‚Р°С‚Р° РѕР±СЂР°Р±РѕС‚РєРё РІ JSON С„РѕСЂРјР°С‚Рµ
     return{'result': result}

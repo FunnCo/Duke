@@ -1,18 +1,13 @@
 % rebase('layout.tpl', year=year)
 
-<!-- Блок карточек -->
 <div>
     <div class="center persons_container">
         <div class="person">
             <div>
-                <!-- Ссылка на GitHub -->
                 <a href="https://github.com/FunnCo" class="link">
-                    <!-- Ссылка на картинку -->
                     <p><img src="https://sun9-33.userapi.com/impg/iX6pE9TI55RsDTya5pZvigrAt85dgyELEU-uCQ/nLRQ7NN7LXo.jpg?size=1440x2160&quality=96&sign=44d4db9ddf0888ef77c71b9b550b14e6&type=album" class="image"></p>
-                    <!-- Текст имени -->
                     <h4 class="normal-letters">Максим Мареев</h4>
                 </a>
-                <!-- Текст объекта разработки -->
                 <p class="p-secondary">- Модуль по определению отношения эквивалентности и нахождению дополнительного отношения к нему</p>
                 <p class="p-secondary">- Навигационная панель</p>
             </div>
