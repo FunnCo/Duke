@@ -25,7 +25,7 @@
 		</table>
 		<div class="top_padding_1">
 		 	Свойства<br>
-			<div class="top_padding_05" class="fill_horizontally">
+			<div class="top_padding_05 fill_horizontally">
 				<textarea class="fill_horizontally text" name="text" id="features-result" rows="4" readonly></textarea>
 			</div>
 		</div>
@@ -63,7 +63,7 @@
 				}
 			}
 			
-			// Заполненеие текстового поля для вывода результатов
+			// Заполнение текстового поля для вывода результатов
 			var resultBox = $('#features-result')
 			resultBox.val('')
 			if(data['isEquivalent']){

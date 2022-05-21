@@ -32,8 +32,8 @@
             <p class="description">Существует направленный граф, у каждого ребра которого есть своя пропускная способность. Цель состоит в том, чтобы вычислить максимальный поток — поток с максимально возможным значением, означающим общее количество потока, покидающее s, такое же, что и общее количество потока, входящее в t.</p>
         </div>
         <div class="center cards_container">
-            <p><img src="https://sun9-83.userapi.com/s/v1/if2/oEpF7ekj0uCzXTQqgbFm-bZ-HOF2v4e8odVJUNhC8v7_0edDdpenvRaZcGCIM1qvJXayxxUxnmdbgfVZZOmvEn-6.jpg?size=350x338&quality=96&type=album" class="image_main"></p>
-            <p><img src="https://sun1-27.userapi.com/s/v1/if2/1aKLQyr0ET4hFnOMFkPmDB4lO2RQPHQoi7Bs1PnQE37X8-XhTILv3nPt9YRLqV5CvZ5ytpNQFN6JK_eUKeUKon52.jpg?size=361x386&quality=96&type=album" class="image_main"></p>
+            <p><img alt="Картинка с пояснением" src="https://sun9-83.userapi.com/s/v1/if2/oEpF7ekj0uCzXTQqgbFm-bZ-HOF2v4e8odVJUNhC8v7_0edDdpenvRaZcGCIM1qvJXayxxUxnmdbgfVZZOmvEn-6.jpg?size=350x338&quality=96&type=album" class="image_main"></p>
+            <p><img alt="Картинка с пояснением" src="https://sun1-27.userapi.com/s/v1/if2/1aKLQyr0ET4hFnOMFkPmDB4lO2RQPHQoi7Bs1PnQE37X8-XhTILv3nPt9YRLqV5CvZ5ytpNQFN6JK_eUKeUKon52.jpg?size=361x386&quality=96&type=album" class="image_main"></p>
         </div>
     </div>
 </div>

@@ -31,7 +31,7 @@
 
 		<h2>Результат</h2>
 		<div class="solution_card">
-			<div class="top_padding_05" class="fill_horizontally">
+			<div class="top_padding_05 fill_horizontally">
 				<input class="fill_horizontally text" id="flow-result" type="text" name="n" value="" readonly><br>
 			</div>
 		</div>
