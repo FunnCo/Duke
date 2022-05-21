@@ -40,6 +40,10 @@
       <SubType>Code</SubType>
     </Compile>
     <Compile Include="routes.py" />
+    <Compile Include="tests\max_flow_tests\test_max_flow.py" />
+    <Compile Include="tests\max_flow_tests\__init__.py">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Include="tests\relation_1_tests\test_relation_1.py">
       <SubType>Code</SubType>
     </Compile>
