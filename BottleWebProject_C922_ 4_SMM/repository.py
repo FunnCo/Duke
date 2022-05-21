@@ -1,12 +1,14 @@
-from bottle import post, request, response
+from bottle import post, request
 from relation_handler import BinaryRelation, Features
 import json
 from max_flow import solve_max_flow
 from datetime import datetime
+import copy
 
 # Метод для сравнения 2 спсиков, возвращает True, если спсики совпадают, и False в ином случае
 def assertLists(list1, list2):
     return all(item in list1 for item in list2) and all(item in list2 for item in list1)
+
 
 # Контроллер, обрабатывающий POST запрос на работу первого калькулятора свойств графа
 @post("/calculate_relation1")
@@ -31,6 +33,7 @@ def calulateRelation1():
     log(requestBody, result, "calulateRelation1")
     return result
 
+
 # Контроллер, обрабатывающий POST запрос на работу второго калькулятора свойств графа
 @post("/calculate_relation2")
 def calulateRelation2():
@@ -53,18 +56,21 @@ def calulateRelation2():
     log(requestBody, result, "calulateRelation2")
     return result
 
+
 # Контроллер, обрабатывающий POST запрос на вычисление максимального потока
 @post("/calculate_maxflow")
 def calulateMaxFlow():
     # Получение входных данных
-    requestBody = json.load(request.body).get('result')
+    inputJSON = json.load(request.body).get('result')
+    requestBody = copy.deepcopy(inputJSON)
     inputArray = requestBody.get('inputArray')
     source = requestBody.get('source')
     sink = requestBody.get('sink')
     # Логирование действий, и возвращение результата в JSON формате
     result = solve_max_flow(inputArray, source, sink)
-    log(requestBody, result, "calulateMaxFlow")
+    log(inputJSON, result, "calulateMaxFlow")
     return{'result': result}
+
 
 def log(input_data, output_data, method):
     with open("log.txt", "a") as myfile:

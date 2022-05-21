@@ -1,6 +1,5 @@
 from enum import Enum
 
-
 # Перечисление для пердставления всех свойств графа
 class Features(str, Enum):
     REFLECTIVE = "рефлективность"

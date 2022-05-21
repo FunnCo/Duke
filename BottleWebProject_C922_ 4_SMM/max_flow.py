@@ -45,6 +45,7 @@ class Graph:
         # Значит необходимо вернуть false
         return False
 
+
     # Возвращает значение максимального потока из s в t в заданном графе
     def FordFulkerson(self, source, sink):
 
@@ -78,10 +79,17 @@ class Graph:
         return max_flow
 
 
+# Главная функция, возвращающая результат
 def solve_max_flow(graph, source, sink):
+
+    # Проверка введённых данных на корректность
     if source==sink:
         return "Некорректный ввод! Источник и сток одинаковы!"
+
+    # Создание экземляра класса с заданной матрицей
     g = Graph(graph)
+
+    # Вызов калькулирующей функции
     result = g.FordFulkerson(source, sink)
     if not result == 0:
         return result

@@ -8,7 +8,7 @@ import sys
 
 # routes и repository содержат HTTP-обработчики дл¤ сервера и должны быть импортированы.
 import routes
-import http_handler
+import repository
 
 if '--debug' in sys.argv[1:] or 'SERVER_DEBUG' in os.environ:
     # Режим отладки включает более подробный вывод в консоль
