@@ -32,21 +32,25 @@
 		<h2>Результат</h2>
 		<div class="solution_card">
 			<div class="top_padding_05" class="fill_horizontally">
-				<input class="fill_horizontally text" id="flow-result" type="text" name="n" value=""><br>
+				<input class="fill_horizontally text" id="flow-result" type="text" name="n" value="" readonly><br>
 			</div>
 		</div>
 	</div>
 </div>
 
 <script>
+// Обработчик изменения размера таблицы
 	handleResize();
 
+	// Занесения поля для ввода размера матрицы в переменную
 	var verticiesElement = $(".input-verticies-count")
 
+	// При клике на поле, текст автоматически выделится 
 	$('#sink').on('click', function() {
 		$(this).select()
 	})
 
+	// Обработка ввода в поле для номера вершины стока
 	$('#sink').on('input', function() {
 
 		if(isNaN($(this).val()) || $(this).val() < 0 || $(this).val() > verticiesElement.val()){
@@ -55,10 +59,12 @@
 		$(this).select()
 	})
 
+	// При клике на поле, текст автоматически выделится 
 	$('#source').on('click', function() {
 		$(this).select()
 	})
 
+	// Обработка ввода в поле для номера вершины источника
 	$('#source').on('input', function() {
 		var currentValue = $(this).val()
 
@@ -68,9 +74,12 @@
 		$(this).select()
 	})
 
+	// Обработчик нажатия на кнопку "Посчитать"
 	$('#calculate').on('click', function() {
+		// Тело запроса к серверу
 		var body = {}
 
+		// Заполнение таблицы по результатам обработки данных
 		var graph = []
 		var verticies = $(".input-verticies-count").val();
 		var table = $('.input-table');
@@ -81,15 +90,15 @@
 			}
             graph.push(currentRow)
         }
+
+		// Занесение данных в тело запроса
 		body["inputArray"] = graph
 		body["source"] = parseInt($("#source").val())-1
 		body["sink"] = parseInt($("#sink").val())-1
-			console.log(body)
-		calculateMaxFlow(body, function(data){
-			console.log(data)
-			
+
+		// Отправка запроса, и обработка ответа
+		calculateMaxFlow(body, function(data){			
 			var resultBox = $('#flow-result')
-			console.log(data['result'])
 			resultBox.val(data['result'])
 		})
 	})

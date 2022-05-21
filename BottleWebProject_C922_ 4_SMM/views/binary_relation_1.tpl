@@ -26,18 +26,22 @@
 		<div class="top_padding_1">
 		 	Свойства<br>
 			<div class="top_padding_05" class="fill_horizontally">
-				<textarea class="fill_horizontally text" name="text" id="features-result" rows="4"></textarea>
+				<textarea class="fill_horizontally text" name="text" id="features-result" rows="4" readonly></textarea>
 			</div>
 		</div>
 	</div>
 </div>
 
 <script>
+	// Обработчик изменения размера таблицы
 	handleResize();
 
+	// Обработчик нажатия на кнопку "Посчитать"
 	$('#calculate').on('click', function() {
+		// Тело запроса к серверу
 		var body = []
 
+		// Считывание всех значений в таблице из исходных данных, и запись их в запрос 
 		var verticies = $(".input-verticies-count").val();
 		var table = $('.input-table');
         for (var r = 0; r < verticies; r++) {
@@ -48,14 +52,18 @@
             body.push(currentRow)
         }
 
+		// Отправка запроса, и обработка ответа
 		calculateRelation1(body, function(data){
-			console.log(body)
+			
+			// Заполнение таблицы по результатам обработки данных
 			table = $('.output-table');
 			for (var r = 0; r < verticies; r++) {				
 				for (var c = 0; c < verticies; c++){
 					$(`#output-item${r}${c}`).val(data['additionalRelation'][r][c])
 				}
 			}
+			
+			// Заполненеие текстового поля для вывода результатов
 			var resultBox = $('#features-result')
 			resultBox.val('')
 			if(data['isEquivalent']){
