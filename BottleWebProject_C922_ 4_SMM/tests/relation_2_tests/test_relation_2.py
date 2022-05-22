@@ -4,7 +4,9 @@ from relation_handler import Features, BinaryRelation
 
 class TestRelationHandler2(unittest.TestCase):
 
+    # ¬ данном методе провер€етс€ корректность определени€ свойств бинарных отношений
     def testFeaturesCheck(self):
+        # ¬ списки занос€тс€ тестовые случаи, и ожидаемые результаты
         inputTests = []
         expectedResults = []
 
@@ -58,13 +60,14 @@ class TestRelationHandler2(unittest.TestCase):
         ])
         expectedResults.append([])
 
-        
+        # ÷икл дл€ последовательной проверки всех тестовых случаев
         for i in range(0, len(inputTests)):
             realResults = BinaryRelation(inputTests[i]).checkForFeatures()
             self.assertCountEqual(realResults, expectedResults[i])
 
-
+    # ¬ данном методе провер€етс€ корректность нахождени€ обратного отношени€ к данному
     def testInversedRelation(self):
+        # ¬ списки занос€тс€ тестовые случаи, и ожидаемые результаты
         inputTests = []
         expectedResults = []
 
@@ -151,6 +154,7 @@ class TestRelationHandler2(unittest.TestCase):
             ]
         )
 
+        # ÷икл дл€ последовательной проверки всех тестовых случаев
         for i in range(0, len(inputTests)):
             realResults = BinaryRelation(inputTests[i]).getInversedRelation()
             self.assertCountEqual(realResults, expectedResults[i])
